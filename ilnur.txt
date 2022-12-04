@@ -1,0 +1,5 @@
+file = open('ilnur.txt')
+here i am.......
+jehehe hj1119ddsfdsf34324324324ds1dsfsdfdsf1111!!
+nowww we have 111111111111111111
+and here we have 311 which is 15 also!
