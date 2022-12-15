@@ -1,4 +1,5 @@
-file = open('ilnur.txt')
+import re
+
 '''     the NumInSecBase finds out if the number fits the conditions '''
 def NumInSecBase(i):
     i = i[::-1]
@@ -14,12 +15,25 @@ def NumInSecBase(i):
         return True
     else:
         return False
-#print(NumInSecBase('111111111111111111'))
+
 file = open('ilnur.txt')
+
 '''Here we check all the given strings in the file'''
+
+
 def FileWork(file):
     for i in file:
         ourCurrentString = i
+        match = re.findall(r"\b[01]+\b", i)
+        #print(match)
+        if (match != []):
+            for j in match:
+                if (NumInSecBase(j) == True):
+                    print(i)
+                    break
+
+
+        '''
         ourNum = ''
         for j in (i+' '):
             try:
@@ -34,28 +48,11 @@ def FileWork(file):
                         ourCurrentString = ''
                         break
 
-                    #print('ur fucked huh!!!!!!!!')
+                    
                 ourNum = ''
             continue
-
+        '''
 
 FileWork(file)
 file.close()
-
-'''
-so....
-1) if 1-9: begin a cycle where count until NOT 0-9 number
-2) else: continue
-NumFinder:
-sooooooo number should num % 3 == 0. ok. then we have to deal with it being in the 2 number base.
-'''
-
-
-
-
-
-
-
-
-
 file.close()
