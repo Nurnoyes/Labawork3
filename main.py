@@ -10,7 +10,6 @@ def NumInSecBase(i):
             return False
         NeededNum += int(i[lengthOfi])*(pow(2,lengthOfi))
         lengthOfi -=1
-    #print(needednum)
     if (NeededNum % 3) == 0:
         return True
     else:
@@ -23,9 +22,8 @@ file = open('ilnur.txt')
 
 def FileWork(file):
     for i in file:
-        ourCurrentString = i
+
         match = re.findall(r"\b[01]+\b", i)
-        #print(match)
         if (match != []):
             for j in match:
                 if (NumInSecBase(j) == True):
@@ -34,6 +32,7 @@ def FileWork(file):
 
 
         '''
+        ourCurrentString = i
         ourNum = ''
         for j in (i+' '):
             try:
